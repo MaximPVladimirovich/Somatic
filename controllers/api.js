@@ -14,7 +14,7 @@ router.post(`/`, async function (req, res) {
   } else {
     studiolist = await Class.find({ name: { $regex: String(searchQuery) } })
   }
-  if (!studiolist || studiolist.length === 0) res.status(400).send({ error: "No task was found" })
+  if (!studiolist || studiolist.length === 0) res.status(400).redirect(`/somatic`)
   res.status(200).render(`classes/index.ejs`, {
     studiolist,
     currentUser: req.session.currentUser

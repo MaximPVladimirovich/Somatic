@@ -9,7 +9,7 @@
   <header>
     <%- include(`../partials/nav.ejs`) %>
   </header>
-  <main>
+  <main id="full-desktop">
     <div class="search-ctn">
       <h2>Discover studios</h2>
       <form action="/search" id="searchForm" method="POST">
@@ -17,27 +17,31 @@
         <input type="submit" id="subHidden" value="Search">
       </form>
     </div>
-    <%studiolist.forEach(function(studio) { %>
-      <div class="stdio-index">
-        <div class="stdio-img">
-          <img src="<%=studio.img%>">
+    <div class="stdio-index">
+      <%studiolist.forEach(function(studio) { %>
+        <div>
+          <div class="stdio-img">
+            <img src="<%=studio.img%>">
+          </div>
+          <div class="stdio-index-info">
+            <div class="stdio-index-type">
+              <%=studio.typesofdance[1]%>
+            </div>
+            <div class="stdio-index-name">
+              <a href="/studios/<%=studio._id%>">
+                <%=studio.name%>
+              </a>
+            </div>
+            <div class="stdioLoc">
+              <%=studio.address.city%>
+                <%=studio.address.state%>
+            </div>
+          </div>
+
         </div>
-        <div class="stdio-index-info">
-          <div class="stdio-index-type">
-            <%=studio.typesofdance[1]%>
-          </div>
-          <div class="stdio-index-name">
-            <a href="/studios/<%=studio._id%>">
-              <%=studio.name%>
-            </a>
-          </div>
-          <div class="stdioLoc">
-            <%=studio.address.city%>
-              <%=studio.address.state%>
-          </div>
-        </div>
-      </div>
-      <% }) %>
+
+        <% }) %>
+    </div>
   </main>
   <footer>
   </footer>
