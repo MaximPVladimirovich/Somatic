@@ -24,7 +24,7 @@ app.use(`/search`, require(`./controllers/api`))
 app.use(express.static(__dirname + `/public`));
 
 // Setup mongoose db
-let DB_url = process.env.DATABASE_URL;
+let DB_url = process.env.MONGODB_URI;
 let database = mongoose.connection;
 mongoose.connect(DB_url, {
   useNewUrlParser: true,
