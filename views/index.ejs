@@ -17,24 +17,29 @@
     <div id="index-h3"> Easily find the classes you want and start moving</div>
     <div id="desktop-h3">
       <div id="desktop-index-info">
-        <div>
+        <div id="indx-title">
           Easily find the dance classes you want and start moving
         </div>
         <p>
-          Find open classes offerd by accredited studios
+          Find open classes offered by accredited studios
         </p>
         <div id="desktop-index-btns">
           <% if(currentUser) { %>
-            <div class="explore-btn">
-              <a href="/studios">Explore classes</a>
-            </div>
+            <a href="/studios">
+              <div class="d-explore-btn">
+                Explore classes
+              </div>
+            </a>
             <% } else { %>
-              <div class="getstarted-btn">
-                <a href="/users/new">Create an account</a>
-              </div>
-              <div class="explore-btn">
-                <a href="/studios">Explore classes</a>
-              </div>
+              <a href="/users/new">
+                <div class="d-getstarted-btn">
+                  Sign up </div>
+              </a>
+              <a href="/studios">
+                <div class="d-explore-btn">
+                  Explore classes
+                </div>
+              </a>
               <% } %>
         </div>
       </div>

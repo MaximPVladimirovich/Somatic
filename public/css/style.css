@@ -241,7 +241,7 @@ header {
   }
   
   .nav-link{
-    font-size: 1.6rem;
+    
     font-weight: 400;
     color: #475569;
   }
@@ -809,6 +809,7 @@ header {
   }
   
   #email, #password {
+    box-shadow: inset 0 2px 2px hsla(0, 0%, 0%, 0.3);
     margin: 10px auto 10px auto;
     padding: 10px 5px;
     border-radius: 5px;
@@ -831,14 +832,14 @@ body {
 }
 header {
   grid-area: header;
-  
+  border: none;
 }
 .nav-logo {
   font-weight: 300;
 }
 .nav-item a{
   height: auto;
-  font-size: 1rem;
+  font-size: 1.3rem;
 }
 .navbar {
   background-color: white;
@@ -873,46 +874,63 @@ main {
 #desktop-index-info {
   padding-top: 30px;
   display: inline;
+  padding-right: 10%;
+  
 }
 
 
-#desktop-h3 div{
-  font-size: 2.1rem;
+#desktop-h3 #indx-title{
+  font-size: 3.2rem;
+  font-weight: 300;
  
 }
 #desktop-h3 p {
   width: 50%;
   margin-top: 20px;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
 }
 #index-btns {
   display: none;
 }
 #desktop-img img{ 
-  width: 80%;
+  width: 90%;
   margin: auto;
  
 }
 #desktop-index-btns {
-  display: flex;
-  width: 60%;
-  justify-content: space-evenly;
+  margin-top: 40px;
+  text-align: left;
 }
+
 
 .d-getstarted-btn {
   color: white;
+ font-size: 1.4rem;
   background-color: #18A0FB;
-  
+ display: inline;
   border-radius: 30px;
-
-  
+  padding: 10px 21px;
+  margin-right: 20px;
 }
+.d-explore-btn {
+  display: inline;
+  font-size: 1.4rem;
+
+  color:#18A0FB;
+  background-color: white;
+  border: 1px solid #18A0FB; 
+  border-radius: 30px;
+  padding: 10px 21px;
+  margin-right: 20px;
+}
+
+
 
 #index-h4 {
   text-align: center;
   margin: 30px auto;
-  font-size: 1.7rem;
-  font-weight: 400;
+  font-size: 1.9rem;
+  font-weight: 300;
   color: #475569;
 }
 
@@ -929,22 +947,19 @@ main {
 }
 
 .img-ctn img {
-  width: 300px;
+  width: 240px;
 }
 .cls-info a:visited {
   color: #101010;
 }
 
-.cls-type, .cls-name {
-  margin: 20px 0;
-}
-
 .cls-type {
+  margin: 10px auto 5px 0;
   color: #838d9b;
 }
-
 .cls-name {
   font-weight: 500;
+  font-size: 1.1rem;
 }
 
 
@@ -989,15 +1004,33 @@ border-radius: 4px;
   background-color: rgb(247, 247, 247);
 }
 
-
-
 .search-ctn {
-  grid-area: search;
+  margin-left: 20px;
+  margin-top: 30px;
   height: 160px;
+}
 
+.search-ctn h2 {
+  font-size: 2.8rem;
+}
+
+#subHidden {
+  display: none;
+}
+#search {
+  box-shadow: inset 0 2px 2px hsla(0, 0%, 0%, 0.1);
+  width: 50%;
+  margin: 10px 0 10px 0;
+  padding: 13px 0 13px 8px;
+  border: 1px solid rgb(231, 231, 231);
+  border-radius: 5px;
+  background-color: #E8E8E8;
 }
 .stdio-img img {
-  width: 150px;
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  
   margin: 0 ;
 }
 
@@ -1011,9 +1044,11 @@ border-radius: 4px;
 .stdio-index-info {
   margin-left: 20px;
 }
-.stdio-index div {
+.stdio-index > div {
+max-width: 200px;
   border-radius: 5px;
   margin: 10px 0 20px 0;
+  box-shadow: 0 4px 6px hsla(0, 0%, 0%, .3);
 }
 .stdio-index-type{
   font-size: 1.1rem;
@@ -1024,9 +1059,97 @@ border-radius: 4px;
 
 .stdio-index-name {
   font-weight: 600;
-  margin: 0;
+  margin: 0 0 7px 0;
+  padding: 0;
   font-size: 1.7rem;
 }
+
+.stdioLoc {
+  margin: 15px auto 10px 5px;
+  
+}
+.stdio-index-info div:last-child {
+  padding: 15px auto 15px auto;
+  margin: 0 0 20px 0;
+}
+
+#stdio-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 
+  "img name"
+  "classes classes"
+  "reviews reviews";
+
+}
+.stdio-show-img {
+  grid-area: img;
+}
+
+#show-stdio-title {
+  grid-area: name;
+}
+#cls-wrap-ctn {
+  grid-area: classes;
+  
+}
+.show-class-ctn {
+  border-radius: 7px;
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+  box-shadow: 0 4px 6px hsla(0, 0%, 0%, .3);
+
+}
+
+#show-cls-title {
+  margin: 60px 0 30px 0 ;
+  font-size: 1.8rem;
+  font-weight: 500;
+  
+}
+#show-cls-title p {
+  width: 40px;
+  border-bottom: 3px solid #18A0FB;
+}
+#show-stdio-crDate {
+  margin: 0 auto;
+  border-radius: 34px;
+  width: 150px;
+  padding: 10px;
+  background-color: #18A0FB;
+  color: white;
+}
+
+#show-class-nm {
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+
+#stdio-class-left {
+  padding: 0 20px;
+  margin-right: 40px;
+}
+#stdio-class-middle {
+  align-self: center;
+  margin: 0 auto 0 0;
+}
+
+#stdio-class-right {
+  align-self: center;
+  margin-right: 50px;
+}
+#stdio-class-right a{
+  color: white;
+  padding: 10px 20px;
+  background-color: #18A0FB;
+  border-radius: 5px;
+}
+
+
+
 
 
 

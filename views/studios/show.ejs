@@ -17,61 +17,64 @@
       </div>
 
       <div id="show-stdio-title">
-        <p id="show-stdio-name">
+        <div id="show-stdio-name">
           <%=studio.name%>
-        </p>
-        <p id="show-stdio-address">
+        </div>
+        <div id="show-stdio-address">
           <%=studio.address.street%>,
             <%=studio.address.city%>,
               <%=studio.address.state%>,
                 <%=studio.address.zip%>
-        </p>
-      </div>
-      <div id="show-stdio-info">
-        <p>Info</p>
-        <div id="show-stdio-description">
-          <%=studio.description%>
+                  <div id="show-stdio-info">
+                    <p>Info</p>
+                    <div id="show-stdio-description">
+                      <%=studio.description%>
+                    </div>
+                  </div>
         </div>
       </div>
-      <p id="show-cls-title">
-        Classes
-      </p>
-      <p id="show-stdio-crDate">
-        <%=new Date().toDateString()%>
-      </p>
-      <%classes.forEach(function(studioClass) {%>
-        <%let currentDay=new Date().getDay()%>
-          <%if(studioClass.time.getDay()===currentDay) { %>
-            <div id="show-class-ctn">
-              <div id="stdio-class-left">
-                <p id="show-class-time">
-                  <%=studioClass.time.getHours()%>:00
-                </p>
-                <p id="show-class-price">
-                  $<%=studioClass.price%>
-                </p>
-                <p id="show-class-length">
-                  <%=studioClass.length%> min
-                </p>
-              </div>
-              <div id="stdio-class-middle">
-                <p id="show-class-nm">
-                  <%=studioClass.name%>
-                </p>
-                <p id="show-class-instructor">
-                  <%=studioClass.instructor_name%>
-                </p>
-              </div>
-              <div id="stdio-class-right">
-                <a href="/classes/<%=studioClass._id%>">
-                  Select
-                </a>
+
+      <div id="cls-wrap-ctn">
+        <div id="show-cls-title">
+          Classes
+          <p></p>
+        </div>
+        <div id="show-stdio-crDate">
+          <%=new Date().toDateString()%>
+        </div>
+        <%classes.forEach(function(studioClass) {%>
+          <%let currentDay=new Date().getDay()%>
+            <%if(studioClass.time.getDay()===currentDay) { %>
+              <div class="show-class-ctn">
+                <div id="stdio-class-left">
+                  <p id="show-class-time">
+                    <%=studioClass.time.getHours()%>:00
+                  </p>
+                  <p id="show-class-price">
+                    $<%=studioClass.price%>
+                  </p>
+                  <p id="show-class-length">
+                    <%=studioClass.length%> min
+                  </p>
+                </div>
+                <div id="stdio-class-middle">
+                  <p id="show-class-nm">
+                    <%=studioClass.name%>
+                  </p>
+                  <p id="show-class-instructor">
+                    <%=studioClass.instructor_name%>
+                  </p>
+                </div>
+                <div id="stdio-class-right">
+                  <a href="/classes/<%=studioClass._id%>">
+                    Select
+                  </a>
+                </div>
               </div>
 
-            </div>
-
-            <% } %>
-              <%})%>
+              <% } %>
+                <%})%>
+      </div>
     </div>
   </main>
 
