@@ -10,34 +10,33 @@
     <%- include(`../partials/nav.ejs`) %>
   </header>
   <main>
-    <div id="search-ctn">
+    <div class="search-ctn">
       <h2>Discover studios</h2>
-      <form action="/search" method="POST">
-        <input type="search" id="search" name="search" placeholder="Search">
-        <input type="submit" value="Search">
+      <form action="/search" id="searchForm" method="POST">
+        <input type="search" id="search" name="search" placeholder="Search"><br>
+        <input type="submit" id="subHidden" value="Search">
       </form>
     </div>
     <%studiolist.forEach(function(studio) { %>
-      <li>
-        <div id="stdio">
-          <div id="stdio-Img">
-            <img src="<%=studio.img%>">
+      <div class="stdio-index">
+        <div class="stdio-img">
+          <img src="<%=studio.img%>">
+        </div>
+        <div class="stdio-index-info">
+          <div class="stdio-index-type">
+            <%=studio.typesofdance[1]%>
           </div>
-          <div id="studiotypeOf">
-            <!-- Random index -->
-            <%=studio.typesofdance[0]%>
+          <div class="stdio-index-name">
+            <a href="/studios/<%=studio._id%>">
+              <%=studio.name%>
+            </a>
+          </div>
+          <div class="stdioLoc">
+            <%=studio.address.city%>
+              <%=studio.address.state%>
           </div>
         </div>
-        <a href="/studios/<%=studio._id%>">
-          <div id="stdioNme">
-            <%=studio.name%>
-          </div>
-        </a>
-        <div id="stdioLoc">
-          <%=studio.address.city%>
-            <%=studio.address.state%>
-        </div>
-      </li>
+      </div>
       <% }) %>
   </main>
   <footer>

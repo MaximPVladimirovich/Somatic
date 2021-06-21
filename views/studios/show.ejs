@@ -10,14 +10,13 @@
     <%- include(`../partials/nav.ejs`) %>
   </header>
   <main>
-    <h2>You're one step away from booking your spot</h2>
-    <p>Make sure this is the class you want</p>
+
     <div id="stdio-info">
-      <div id="stdio-show-Img">
+      <div class="stdio-show-img">
         <img src="<%=studio.img%>">
       </div>
 
-      <div id="show-sdio-title">
+      <div id="show-stdio-title">
         <p id="show-stdio-name">
           <%=studio.name%>
         </p>
@@ -28,47 +27,55 @@
                 <%=studio.address.zip%>
         </p>
       </div>
-      <div id="show-sdio-info">
-        <%=studio.description%>
+      <div id="show-stdio-info">
+        <p>Info</p>
+        <div id="show-stdio-description">
+          <%=studio.description%>
+        </div>
       </div>
       <p id="show-cls-title">
         Classes
       </p>
-      <p id="show-stdio-crDat">
-        <%=new Date()%>
+      <p id="show-stdio-crDate">
+        <%=new Date().toDateString()%>
       </p>
       <%classes.forEach(function(studioClass) {%>
         <%let currentDay=new Date().getDay()%>
           <%if(studioClass.time.getDay()===currentDay) { %>
-
-            <div id="stdio-class-left">
-              <p id="show-class-time">
-                <%=studioClass.time.getHours()%>
-              </p id="show-class-price">
-              <%=studioClass.price%>
-                <p id="show-class-length">
-                  <%=studioClass.length%>min
+            <div id="show-class-ctn">
+              <div id="stdio-class-left">
+                <p id="show-class-time">
+                  <%=studioClass.time.getHours()%>:00
                 </p>
-            </div>
-            <div id="stdio-class-middle">
-              <p id="show-class-Nm">
-                <%=studioClass.name%>
-              </p>
-              <p id="show-class-instructor">
-                <%=studioClass.instructor_name%>
-              </p>
-            </div>
-            <div id="stdio-class-right">
-              <button id="myBtn">Open Modal</button>
-              <!-- The Modal -->
-              <div id="myModal" class="modal">
-                <!-- Modal content -->
-                <div class="modal-content">
-                  <span class="close">&times;</span>
-                  <p>Some text in the Modal..</p>
+                <p id="show-class-price">
+                  $<%=studioClass.price%>
+                </p>
+                <p id="show-class-length">
+                  <%=studioClass.length%> min
+                </p>
+              </div>
+              <div id="stdio-class-middle">
+                <p id="show-class-nm">
+                  <%=studioClass.name%>
+                </p>
+                <p id="show-class-instructor">
+                  <%=studioClass.instructor_name%>
+                </p>
+              </div>
+              <div id="stdio-class-right">
+                <button id="myBtn">Select</button>
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+                  <!-- Modal content -->
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>Some text in the Modal..</p>
+                  </div>
                 </div>
               </div>
+
             </div>
+
             <% } %>
               <%})%>
     </div>

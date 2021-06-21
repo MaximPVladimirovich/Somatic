@@ -24,15 +24,6 @@ a:visited {
 }
 
 
-body {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
-  grid-template-areas: 
-  "header"
-  "main"
-  "footer";
-}
 header {
   grid-area: header;
   border-bottom: 1px solid #E2E8F0;
@@ -199,7 +190,7 @@ body {
   "footer";
 }
 main {
-  margin: 8px;
+  margin: auto 15px;
 }
 header {
   grid-area: header;
@@ -211,6 +202,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.5rem;
+  background-color: #838d9b;
 }
 
 .hamburger {
@@ -250,15 +242,16 @@ header {
 .nav-logo {
   font-size: 2.1rem;
   font-weight: 500;
-  color: #482ff7;
+  color: black;
 }
 
 #index-h3 {
-  height: 100px;
+  height: auto;
   text-align: center;
-  font-size: 2.3rem;
-  margin-top: 20px;
+  font-size: 2rem;
+  margin: 20px auto;
   font-weight: 300;
+  padding: 0 5px;
 }
 #index-btns {
   display: flex;
@@ -270,19 +263,21 @@ header {
   text-align: center;
   color: #18A0FB;
   border-radius: 50px;
-  width: 345px;
+  width: 90%;
   padding: 15px 30px;
   border: 1px solid #19a0fb;
   margin: 10px auto;
+  font-size: 1.5rem;
 }
 #index-h4 {
   font-size: 1.3rem;
 }
 .getstarted-btn {
+  font-size: 1.5rem;
   text-align: center;
 color: white;
 border-radius: 50px;
-  width: 345px;
+ width: 90%;
 padding: 15px 30px;
 margin: 10px auto;
 background-color: #18A0FB;
@@ -331,7 +326,7 @@ background-color: #18A0FB;
   
 }
 .cls-type {  
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: rgb(102, 102, 102);
   padding-bottom: 0;
   margin-bottom: 0;
@@ -341,6 +336,7 @@ background-color: #18A0FB;
   font-size: 1.5rem;
 margin-top: 0;
   align-self:start;
+  color: black;
 }
 .cls-name:hover {
   color: lightgray;
@@ -429,14 +425,148 @@ justify-self: start;
 border-bottom: 1px solid lightgray; 
   margin: 15px auto 25px auto;
 }
-
-#search-ctn {
+.search-ctn form {
+  margin: 0;
+  padding: 0;
+}
+.search-ctn {
+   margin: 20px auto;
  width: 100%;
+ text-align: center;
 }
 
-#search-ctn input {
+
+.search-ctn h2 {
+  text-align: left;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+#search {
+  font-size: 1.3rem;
+  width: 100%;
+  border-radius: 5px;
+  padding: 20px 0;
+  border: 1px solid rgb(194, 194, 194);
+  background-color: rgb(247, 247, 247);
+  text-align: left;
+  padding-left: 15px;
+  margin-top: 10px;
+
+}
+#subHidden {
+  display: none;
+}
+
+/* Studio index page */
+
+.stdio-index {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  column-gap: 15px;
+  grid-template-areas: "img info";
+  margin: 15px auto;
+}
+.stdio-img {
+  grid-area: img;
+}
+.stdio-img img {
   width: 100%;
 }
+
+.stdio-index-info {
+  grid-area: info;
+}
+
+.stdio-index-type {
+  color: rgb(173, 173, 173);
+  font-size: 1.2rem;
+}
+.stdio-index-name  a{
+  color: black;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.stdioLoc {
+  padding-top: 75%;
+  font-size: 1.3rem;
+}
+
+/* Studio show page */
+#show-stdio-crDate {
+  text-align: center;
+  padding: 20px 0;
+}
+.stdio-show-img img {
+  width: 100%;
+}
+#show-stdio-title {
+  margin: 10px 0 30px 0 
+}
+#show-stdio-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+#show-stdio-info {
+  margin: 10px 0 30px 0;
+}
+#show-stdio-info p{
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding-bottom: 5px;
+  border-bottom: 1px solid lightgray;
+}
+#show-cls-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding-bottom: 5px;
+  border-bottom: 1px solid lightgray;
+}
+#show-class-ctn {
+  margin: 10px 0;
+  border-radius: 5px;
+  padding: 20px 0;
+  background-color: rgb(212, 212, 212);
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  grid-row: auto;
+  grid-template-areas: " left middle right";
+}
+#stdio-class-left {
+  grid-area: left;
+align-self: center;
+
+}
+#show-class-time, #show-class-price, #show-class-length {
+  font-size: 1.4rem;
+  padding-left: 20px;
+}
+
+#stdio-class-middle {
+  grid-area: middle;
+  align-self: start;
+  
+
+}
+
+#show-class-nm {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+#stdio-class-right {
+  grid-area: right;
+  place-self: center;
+}
+
+
+
+
+
+
+
+
 
 
 
