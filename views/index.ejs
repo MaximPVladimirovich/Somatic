@@ -10,11 +10,40 @@
     <%- include(`./partials/nav.ejs`) %>
   </header>
   <main>
-    <div>
-      <img id="index-Img"
-        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi1.wp.com%2Ffreefuninaustin.com%2Fwp-content%2Fuploads%2Fsites%2F44%2F2015%2F08%2FScreen-Shot-2015-08-13-at-8.37.09-AM.png%3Fssl%3D1&f=1&nofb=1">
+
+    <img id="index-Img"
+      src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi1.wp.com%2Ffreefuninaustin.com%2Fwp-content%2Fuploads%2Fsites%2F44%2F2015%2F08%2FScreen-Shot-2015-08-13-at-8.37.09-AM.png%3Fssl%3D1&f=1&nofb=1">
     </div>
-    <h3 id="index-h3"> Easily find the classes you want and start moving</h3>
+    <div id="index-h3"> Easily find the classes you want and start moving</div>
+    <div id="desktop-h3">
+      <div id="desktop-index-info">
+        <div>
+          Easily find the dance classes you want and start moving
+        </div>
+        <p>
+          Find open classes offerd by accredited studios
+        </p>
+        <div id="desktop-index-btns">
+          <% if(currentUser) { %>
+            <div class="explore-btn">
+              <a c href="/studio">Explore classes</a>
+            </div>
+            <% } else { %>
+              <div class="getstarted-btn">
+                <a href="/users/new">Create an account</a>
+              </div>
+              <div class="explore-btn">
+                <a href="/studios">Explore classes</a>
+              </div>
+              <% } %>
+        </div>
+      </div>
+      <div id="desktop-img">
+        <img src="../img/victory.png">
+      </div>
+
+
+    </div>
 
     <!-- Signup page -->
     <div id="index-btns">
@@ -25,9 +54,9 @@
           <a class="explore-btn" href="/studios">Explore classes</a>
           <% } %>
     </div>
-
+    <h4 id="index-h4">Browse popular classes</h4>
     <div class="home-classes">
-      <h4 id="index-h4">Browse classes</h4>
+
       <%classes.forEach(function(event) { %>
         <!-- grid -->
         <div class="class-ctn">
@@ -37,7 +66,7 @@
           <!-- flex -->
           <div class="class-info">
             <p class="cls-type">
-              <%=event.name%>
+              <%=event.dancetype%>
             </p>
             <a href="/classes/<%=event._id%>">
               <p class="cls-name">
@@ -45,7 +74,6 @@
               </p>
             </a>
             <p class="class-st">
-
             </p>
           </div>
         </div>
