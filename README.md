@@ -20,6 +20,7 @@ This project was build using html, css, node.js, heroku, figma, github.
 ###Wireframe
 
 https://www.figma.com/file/czZAIeqZUrH8apiinNNaig/Max-Project-2-GA
+
 https://www.linkedin.com/in/devinchan-ux/
 
 ###Github roject
