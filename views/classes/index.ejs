@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%- include(`../partials/head.ejs`) %>
+</head>
+
+<body>
+  <header>
+    <%- include(`../partials/nav.ejs`) %>
+  </header>
+  <main>
+
+    <div class="home-classes">
+      <h4 id="index-h4">Popular classes</h4>
+      <%classList.forEach(function(danceClass) {%>
+        <img src="<%=danceClass.img%>">
+        <p>
+          <%=danceClass.dancetype%>
+        </p>
+        <p>
+          <a href="/classes/<%=danceClass._id%>">
+            <%=danceClass.name%>
+          </a>
+
+        </p>
+        <p> </p>
+        <%}) %>
+
+          <!-- grid -->
+          <div class="class-ctn">
+            <div class="img-ctn">
+              <img src="">
+            </div>
+            <!-- flex -->
+            <div class="class-info">
+              <p class="cls-type">
+
+              </p>
+              <a href="">
+                <p class="cls-name">
+
+                </p>
+              </a>
+
+              <p class="class-st">
+
+              </p>
+            </div>
+          </div>
+          <div>
+            <a href="" class="getstarted-btn">View classes</a>
+          </div>
+
+    </div>
+  </main>
+  <footer>
+  </footer>
+</body>
+
+</html>

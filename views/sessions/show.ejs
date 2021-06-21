@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include(`../partials/head.ejs`) %>
+</head>
+
+<body>
+  <header>
+    <%- include('../partials/nav.ejs') %>
+
+  </header>
+  <main>
+    <h1>Account</h1>
+    <p>
+      <%= currentUser.email %>
+    </p>
+  </main>
+</body>
+
+</html>

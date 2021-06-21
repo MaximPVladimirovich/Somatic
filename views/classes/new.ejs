@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <%- include(`../partials/head.ejs`) %>
+</head>
+
+<body>
+  <header>
+    <%- include('../partials/nav.ejs') %>
+  </header>
+  <main>
+    <h1>Create class</h1>
+    <form action='/classes' method='POST'>
+
+      <label for="created-by">Dance studio</label>
+      <select name="created_by" id="created-by">
+        <%studio.forEach(function(studio) { %>
+          <option value="<%=studio._id%>">
+            <%=studio.name%>
+          </option>
+          <%}) %>
+      </select>
+
+      <label for="name">name:</label>
+      <input type="name" name="name" id="name" />
+
+      <label for="dancetype">dancetype:</label>
+      <input type="dancetype" name="dancetype" id="dancetype" />
+
+      <label for="description">description:</label>
+      <input type="description" name="description" id="description" />
+
+      <label for="price">price:</label>
+      <input type="price" name="price" id="price" />
+
+      <label for="length">length:</label>
+      <input type="length" name="length" id="length" />
+
+      <label for="instructor_name">instructor name:</label>
+      <input type="instructor_name" name="instructor_name" id="instructor_name" />
+
+      <label for="img">img:</label>
+      <input type="img" name="img" id="img" />
+
+      <label for="time">time:</label>
+      <input type="time" name="time" id="time" />
+
+      <label for="spots_left">spots_left:</label>
+      <input type="spots_left" name="spots_left" id="spots_left" />
+
+      <label for="room">room:</label>
+      <input type="room" name="room" id="room" />
+
+      <input type="submit" value="Create class">
+    </form>
+
+  </main>
+  <footer>
+
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%- include(`../partials/head.ejs`) %>
+</head>
+
+<body>
+  <header>
+    <%- include(`../partials/nav.ejs`) %>
+  </header>
+  <main>
+    <h2>You're one step away from booking your spot</h2>
+    <p>Make sure this is the class you want</p>
+    <div id="stdio-info">
+      <div id="stdio-show-Img">
+        <img src="<%=studio.img%>">
+      </div>
+
+      <div id="show-sdio-title">
+        <p id="show-stdio-name">
+          <%=studio.name%>
+        </p>
+        <p id="show-stdio-address">
+          <%=studio.address.street%>,
+            <%=studio.address.city%>,
+              <%=studio.address.state%>,
+                <%=studio.address.zip%>
+        </p>
+      </div>
+      <div id="show-sdio-info">
+        <%=studio.description%>
+      </div>
+      <p id="show-cls-title">
+        Classes
+      </p>
+      <p id="show-stdio-crDat">
+        <%=new Date()%>
+      </p>
+      <%classes.forEach(function(studioClass) {%>
+        <%let currentDay=new Date().getDay()%>
+          <%if(studioClass.time.getDay()===currentDay) { %>
+
+            <div id="stdio-class-left">
+              <p id="show-class-time">
+                <%=studioClass.time.getHours()%>
+              </p id="show-class-price">
+              <%=studioClass.price%>
+                <p id="show-class-length">
+                  <%=studioClass.length%>min
+                </p>
+            </div>
+            <div id="stdio-class-middle">
+              <p id="show-class-Nm">
+                <%=studioClass.name%>
+              </p>
+              <p id="show-class-instructor">
+                <%=studioClass.instructor_name%>
+              </p>
+            </div>
+            <div id="stdio-class-right">
+              <button id="myBtn">Open Modal</button>
+              <!-- The Modal -->
+              <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <p>Some text in the Modal..</p>
+                </div>
+              </div>
+            </div>
+            <% } %>
+              <%})%>
+    </div>
+  </main>
+
+</body>
+
+</html>

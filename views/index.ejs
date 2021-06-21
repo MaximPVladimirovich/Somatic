@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%- include(`./partials/head.ejs`) %>
+</head>
+
+<body>
+  <header>
+    <%- include(`./partials/nav.ejs`) %>
+  </header>
+  <main>
+    <div>
+      <img id="index-Img"
+        src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi1.wp.com%2Ffreefuninaustin.com%2Fwp-content%2Fuploads%2Fsites%2F44%2F2015%2F08%2FScreen-Shot-2015-08-13-at-8.37.09-AM.png%3Fssl%3D1&f=1&nofb=1">
+    </div>
+    <h3 id="index-h3"> Easily find the classes you want and start moving</h3>
+
+    <!-- Signup page -->
+    <div id="index-btns">
+      <% if(currentUser) { %>
+        <a class="explore-btn" href="/classes">Explore classes</a>
+        <% } else { %>
+          <a class="getstarted-btn" href="/users/new">Create an account</a>
+          <a class="explore-btn" href="/studios">Explore classes</a>
+          <% } %>
+    </div>
+
+    <div class="home-classes">
+      <h4 id="index-h4">Browse classes</h4>
+      <%classes.forEach(function(event) { %>
+        <!-- grid -->
+        <div class="class-ctn">
+          <div class="img-ctn">
+            <img src="<%=event.img%>">
+          </div>
+          <!-- flex -->
+          <div class="class-info">
+            <p class="cls-type">
+              <%=event.name%>
+            </p>
+            <a href="/classes/<%=event._id%>">
+              <p class="cls-name">
+                <%=event.name%>
+              </p>
+            </a>
+            <p class="class-st">
+
+            </p>
+          </div>
+        </div>
+        <% }) %>
+    </div>
+  </main>
+  <footer>
+  </footer>
+</body>
+
+</html>

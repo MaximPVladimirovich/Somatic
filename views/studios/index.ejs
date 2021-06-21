@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%- include(`../partials/head.ejs`) %>
+</head>
+
+<body>
+  <header>
+    <%- include(`../partials/nav.ejs`) %>
+  </header>
+  <main>
+    <div id="search-ctn">
+      <h2>Discover studios</h2>
+      <form action="/search" method="POST">
+        <input type="search" id="search" name="search" placeholder="Search">
+        <input type="submit" value="Search">
+      </form>
+    </div>
+    <%studiolist.forEach(function(studio) { %>
+      <li>
+        <div id="stdio">
+          <div id="stdio-Img">
+            <img src="<%=studio.img%>">
+          </div>
+          <div id="studiotypeOf">
+            <!-- Random index -->
+            <%=studio.typesofdance[0]%>
+          </div>
+        </div>
+        <a href="/studios/<%=studio._id%>">
+          <div id="stdioNme">
+            <%=studio.name%>
+          </div>
+        </a>
+        <div id="stdioLoc">
+          <%=studio.address.city%>
+            <%=studio.address.state%>
+        </div>
+      </li>
+      <% }) %>
+  </main>
+  <footer>
+  </footer>
+</body>
+
+</html>

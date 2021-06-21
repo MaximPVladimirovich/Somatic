@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <%- include(`../partials/head.ejs`) %>
+</head>
+
+<body>
+  <header>
+    <%- include(`../partials/nav.ejs`) %>
+  </header>
+  <main>
+    <h4>Class by: <%=danceclass.created_by.name%>
+    </h4>
+    <p>Class name
+      <%=danceclass.name%>
+    </p>
+    <p>Type:
+      <%=danceclass.dancetype%>
+    </p>
+    <p>Description:
+      <%=danceclass.description%>
+    </p>
+    <p>Price:
+      $<%=danceclass.price%>
+    </p>
+    <p>length:
+      <%=danceclass.length%> min
+    </p>
+    <p>Instructor name:
+      <%=danceclass.instructor_name%>
+    </p>
+    <p>time:
+      <%=danceclass.time%>
+    </p>
+    <p>spots left:
+      <%=danceclass.spots_left%>
+    </p>
+
+    <button id="myBtn">Book</button>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>You’re one step away from booking your spot!</h2>
+        <p>Make sure this is the class you want</p>
+        <h5>
+          <%=danceclass.name%> with <%=danceclass.instructor_name%>
+        </h5>
+        <ul>
+          <li>
+            <%=danceclass.created_by.address.street%>, <%=danceclass.created_by.address.city%>, <%=danceclass.created_by.address.state%>
+                  <%=danceclass.created_by.address.zip%>
+          </li>
+          <li>$
+            <%=danceclass.price%>
+          </li>
+          <li>
+            <%=danceclass.created_by.website%>
+          </li>
+          <div class="custom-select" style="width:200px;">
+            <select>
+              <option value="0">Visa: 00000 1111 2222 3333/option>
+              <option value="1">Mastercard: 9999 8888 6666 4444</option>
+            </select>
+          </div>
+        </ul>
+        <a href="" id="comfirm-Modal"> Comfirm</a>
+        <a href="" id="comfirm-Modal"> Cancel</a>
+      </div>
+
+    </div>
+
+
+
+
+  </main>
+  <footer>
+  </footer>
+</body>
+
+</html>
